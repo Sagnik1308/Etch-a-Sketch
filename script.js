@@ -5,12 +5,14 @@ function makeGrid(gridSize){
         container.appendChild(row);
         row.classList.add('gridRow');
     }
+    const breadth=640/gridSize;
     let rows=document.querySelectorAll('.gridRow');
     for(let i=0;i<rows.length;i++){
         for(let j=0;j<gridSize;j++){
             let cell=document.createElement('div');
             rows[i].appendChild(cell);
             cell.classList.add('cell');
+            cell.setAttribute('style',`width:${breadth}px;height:${breadth}px`);
         }
     }
     let cells=document.querySelectorAll('.cell');
@@ -29,6 +31,7 @@ btn1.addEventListener('click',()=>{
         container.removeChild(row);
     });
     makeGrid(gridSize);
+
 });
 const btn2=document.querySelector('.button2');
 btn2.addEventListener('click',()=>{

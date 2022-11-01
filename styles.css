@@ -1,13 +1,13 @@
 .cell{
     border: 1px solid gray;
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    margin-right: 2px;
+    box-sizing: border-box;
 }
 .container{
     text-align: center;
-    max-width: 960px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .hover{
     background-color: black;
@@ -30,4 +30,3 @@ body{
     flex-direction: column;
     align-items: center;
 }
-
