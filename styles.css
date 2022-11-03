@@ -10,7 +10,8 @@
     align-items: center;
 }
 .hover{
-    background-color: black;
+   filter:brightness(90%);
+    
 }
 h1{
     text-align: center;
@@ -20,13 +21,20 @@ h1{
     margin-bottom: 16px;
 }
 button{
-    background-color: red;
-    border-radius: 16px;
-    padding:8px;
-    margin:16px;
+    margin: 7px;
+    padding: 10px;
+    width: 80px;
+    background-color: transparent;
+    color: #FFF;
+    border-radius: 3px;
+    box-shadow: 0 0 5px #fff, 0 0 5px #fff inset;
+    border:none;
 }
 body{
     display:flex;
     flex-direction: column;
     align-items: center;
+    background-color: #5A236C;
+    background-image: linear-gradient(to bottom right, #392270, #E9275B);
+    color: #FFF;
 }
