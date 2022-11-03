@@ -5,7 +5,7 @@ function makeGrid(gridSize){
         container.appendChild(row);
         row.classList.add('gridRow');
     }
-    const breadth=640/gridSize;
+    const breadth=560/gridSize;
     let rows=document.querySelectorAll('.gridRow');
     for(let i=0;i<rows.length;i++){
         for(let j=0;j<gridSize;j++){
@@ -15,7 +15,9 @@ function makeGrid(gridSize){
             cell.setAttribute('style',`width:${breadth}px;height:${breadth}px`);
         }
     }
-    let elements=document.getElementsByClassName('hover');
+}
+makeGrid(16);
+function hover(){
     let cells=document.querySelectorAll('.cell');
     cells.forEach(cell=>{
         cell.addEventListener('mouseover',()=>{
@@ -25,11 +27,25 @@ function makeGrid(gridSize){
             const b = randomBetween(0, 255);
             const rgb = `rgb(${r},${g},${b})`;
             cell.style.backgroundColor=rgb;
-            cell.classList.add('hover');
         });
     });
 }
-makeGrid(16);
+function hoverBlack(){
+    let cells=document.querySelectorAll('.cell');
+    cells.forEach(cell=>{
+        cell.addEventListener('mouseover',()=>{
+            cell.style.backgroundColor='black';
+        });
+    });
+}
+function hoverWhite(){
+    let cells=document.querySelectorAll('.cell');
+    cells.forEach(cell=>{
+        cell.addEventListener('mouseover',()=>{
+            cell.style.backgroundColor='white';
+        });
+    });
+}
 const btn1=document.querySelector('.button1');
 btn1.addEventListener('click',()=>{
     let gridSize=parseInt(prompt('Enter new Grid Size'));
@@ -40,9 +56,8 @@ btn1.addEventListener('click',()=>{
     makeGrid(gridSize);
 });
 const btn2=document.querySelector('.button2');
-btn2.addEventListener('click',()=>{
-    let cells=document.querySelectorAll('.cell');
-    cells.forEach(cell=>{
-        cell.style.backgroundColor='transparent';
-    });
-});
+btn2.addEventListener('click',hoverWhite);
+const btn3=document.querySelector('.button3');
+btn3.addEventListener('click',hoverBlack);
+const btn4=document.querySelector('.button4');
+btn4.addEventListener('click',hover);
